@@ -27,9 +27,7 @@ public class GeneroService {
 	
 	public Genero updateGenero(Genero genero, Integer id) {
 		Genero generoExistenteNoBanco = getGeneroById(id);
-		generoExistenteNoBanco.setFilmes(genero.getFilmes());
-		generoExistenteNoBanco.setGenero(genero.getGenero());
-		generoExistenteNoBanco.setIdGenero(genero.getIdGenero());
+		generoExistenteNoBanco.setDescricao(genero.getDescricao());
 		return generoRepository.save(generoExistenteNoBanco);
 	}
 	

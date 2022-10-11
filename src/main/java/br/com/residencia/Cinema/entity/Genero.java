@@ -19,8 +19,8 @@ public class Genero {
 	@Column(name = "id_genero")
 	private Integer idGenero;
 
-	@Column(name = "genero")
-	private String genero;
+	@Column(name = "descricao")
+	private String descricao;
 	
 	@OneToMany(mappedBy = "Filme")
 	private Set<Filme> filmes;
@@ -33,12 +33,12 @@ public class Genero {
 		this.idGenero = idGenero;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public Set<Filme> getFilmes() {

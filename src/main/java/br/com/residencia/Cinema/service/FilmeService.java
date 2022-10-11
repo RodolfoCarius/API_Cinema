@@ -28,9 +28,8 @@ public class FilmeService {
 	public Filme updateFilme(Filme filme, Integer id) {
 		Filme filmeExistenteNoBanco = getFilmeById(id);
 		filmeExistenteNoBanco.setAnoLancamento(filme.getAnoLancamento());
-		filmeExistenteNoBanco.setDiretor(filme.getDiretor());
-		filmeExistenteNoBanco.setGenero(filme.getGenero());
-		filmeExistenteNoBanco.setIdFilme(filme.getIdFilme());
+		//filmeExistenteNoBanco.setDiretor(filme.getDiretor());
+		//filmeExistenteNoBanco.setGenero(filme.getGenero());
 		filmeExistenteNoBanco.setNomeBr(filme.getNomeBr());
 		filmeExistenteNoBanco.setNomeEn(filme.getNomeEn());
 		filmeExistenteNoBanco.setSinopse(filme.getSinopse());
