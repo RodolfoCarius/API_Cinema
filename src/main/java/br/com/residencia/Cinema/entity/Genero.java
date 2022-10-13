@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idGenero")
 @Entity
 @Table(name = "genero")
 public class Genero {
@@ -19,10 +23,10 @@ public class Genero {
 	@Column(name = "id_genero")
 	private Integer idGenero;
 
-	@Column(name = "genero")
-	private String genero;
-	
-	@OneToMany(mappedBy = "Filme")
+	@Column(name = "descricao")
+	private String descricao;
+
+	@OneToMany(mappedBy = "genero")
 	private Set<Filme> filmes;
 
 	public Integer getIdGenero() {
@@ -33,12 +37,12 @@ public class Genero {
 		this.idGenero = idGenero;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public Set<Filme> getFilmes() {
@@ -49,5 +53,4 @@ public class Genero {
 		this.filmes = filmes;
 	}
 
-	
 }

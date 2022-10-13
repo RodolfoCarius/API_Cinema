@@ -13,7 +13,7 @@ public class GeneroService {
 	@Autowired
 	GeneroRepository generoRepository;
 	
-	public List<Genero> getAllGeneros(Genero genero){
+	public List<Genero> getAllGeneros(){
 		return generoRepository.findAll();
 	}
 	
@@ -27,9 +27,9 @@ public class GeneroService {
 	
 	public Genero updateGenero(Genero genero, Integer id) {
 		Genero generoExistenteNoBanco = getGeneroById(id);
-		generoExistenteNoBanco.setFilmes(genero.getFilmes());
-		generoExistenteNoBanco.setGenero(genero.getGenero());
-		generoExistenteNoBanco.setIdGenero(genero.getIdGenero());
+		generoExistenteNoBanco.setDescricao(genero.getDescricao());	
+		//generoExistenteNoBanco.setFilmes(genero.getFilmes());
+		
 		return generoRepository.save(generoExistenteNoBanco);
 	}
 	

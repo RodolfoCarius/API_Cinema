@@ -27,8 +27,7 @@ public class DiretorService {
 	
 	public Diretor updateDiretor(Diretor diretor, Integer id) {
 		Diretor diretorExistenteNoBanco = getDiretorById(id);
-		diretorExistenteNoBanco.setFilmes(diretor.getFilmes());
-		diretorExistenteNoBanco.setIdDiretor(diretor.getIdDiretor());
+		//diretorExistenteNoBanco.setFilmes(diretor.getFilmes());
 		diretorExistenteNoBanco.setNome(diretor.getNome());
 		return diretorRepository.save(diretorExistenteNoBanco);
 	}
